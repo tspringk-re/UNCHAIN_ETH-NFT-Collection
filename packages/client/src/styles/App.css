@@ -46,6 +46,10 @@
   font-size: 16px;
   font-weight: bold;
   color: white;
+  opacity: 1;
+}
+.cta-button:disabled {
+  opacity: 0.5;
 }
 
 .connect-wallet-button {

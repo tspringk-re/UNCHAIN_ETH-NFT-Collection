@@ -15,6 +15,8 @@ contract MyEpicNFT is ERC721URIStorage {
 
     // _tokenIdsを初期化（_tokenIds = 0）
     Counters.Counter private _tokenIds;
+    event NewEpicNFTMinted(address sender, uint256 tokenId);
+
 
     // NFT トークンの名前とそのシンボルを渡します。
     constructor() ERC721 ("Philosopher NFT", "takayasu") {
@@ -40,5 +42,9 @@ contract MyEpicNFT is ERC721URIStorage {
         );
       // NFTがいつ誰に作成されたかを確認します。
       console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
+
+      emit NewEpicNFTMinted(msg.sender, newItemId);
+
+
     }
 }
